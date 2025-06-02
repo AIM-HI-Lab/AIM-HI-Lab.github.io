@@ -15,25 +15,51 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Navbar scroll effect
 const navbar = document.querySelector('.navbar');
 let lastScroll = 0;
+let isScrolling = false;
 
-window.addEventListener('scroll', () => {
+// Function to handle navbar visibility
+function handleNavbarVisibility() {
     const currentScroll = window.pageYOffset;
     
+    // Always show navbar at the top of the page
     if (currentScroll <= 0) {
+        navbar.classList.remove('scroll-down');
         navbar.classList.remove('scroll-up');
         return;
     }
     
-    if (currentScroll > lastScroll && !navbar.classList.contains('scroll-down')) {
-        // Scroll Down
+    // Add a small threshold to prevent flickering
+    if (Math.abs(currentScroll - lastScroll) < 5) {
+        return;
+    }
+    
+    if (currentScroll > lastScroll) {
+        // Scrolling down
         navbar.classList.remove('scroll-up');
         navbar.classList.add('scroll-down');
-    } else if (currentScroll < lastScroll && navbar.classList.contains('scroll-down')) {
-        // Scroll Up
+    } else {
+        // Scrolling up
         navbar.classList.remove('scroll-down');
         navbar.classList.add('scroll-up');
     }
+    
     lastScroll = currentScroll;
+}
+
+// Throttle scroll events for better performance
+window.addEventListener('scroll', () => {
+    if (!isScrolling) {
+        window.requestAnimationFrame(() => {
+            handleNavbarVisibility();
+            isScrolling = false;
+        });
+        isScrolling = true;
+    }
+});
+
+// Ensure navbar is visible on page load
+document.addEventListener('DOMContentLoaded', () => {
+    handleNavbarVisibility();
 });
 
 // Intersection Observer for sections
@@ -75,13 +101,6 @@ const cardObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.research-card').forEach(card => {
     cardObserver.observe(card);
-});
-
-// Parallax effect for hero section
-const hero = document.querySelector('.hero');
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    hero.style.backgroundPositionY = `${scrolled * 0.5}px`;
 });
 
 // Add hover effect to research cards
