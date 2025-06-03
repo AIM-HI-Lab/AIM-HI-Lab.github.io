@@ -13,16 +13,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      # Add your build steps here if needed
-      - name: Build project
-        run: |
-          # Add your build commands here (e.g., npm run build or similar)
+        # Add your build steps here if needed
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      # Add build steps to generate your Pages content
+      - run: |
+          mkdir -p artifact
+          echo "<html><body>GitHub Pages Deployment</body></html>" > artifact/index.html
+
+      # Upload the artifact required by deploy-pages
+      - uses: actions/upload-artifact@v4
         with:
           name: github-pages
-          path: ./path-to-built-files  # Adjust this to the directory containing your built files
+          path: artifact
 
+      # Configure Pages
       - uses: actions/configure-pages@v4
+
+      # Deploy Pages
       - uses: actions/deploy-pages@v4
