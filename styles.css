@@ -274,72 +274,90 @@ section:hover h2::after {
 
 .research-card {
     background: var(--white);
-    padding: 2.5rem;
-    border-radius: 16px;
+    padding: 2rem;
+    border-radius: 10px;
     box-shadow: var(--shadow-sm);
-    transition: all 0.4s ease;
-    border: 1px solid rgba(41, 128, 185, 0.1);
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.research-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: var(--gradient-primary);
-    opacity: 0;
-    transition: opacity 0.4s ease;
 }
 
 .research-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-md);
-    border-color: var(--primary-blue);
-}
-
-.research-card:hover::before {
-    opacity: 1;
 }
 
 .research-card h3 {
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.research-card h3 a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.research-card h3 a:hover {
     color: var(--primary-blue);
-    margin-bottom: 1.25rem;
-    font-size: 1.4rem;
-    position: relative;
-    padding-bottom: 0.75rem;
-}
-
-.research-card h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40px;
-    height: 2px;
-    background: var(--primary-blue);
-    transition: width 0.3s ease;
-}
-
-.research-card:hover h3::after {
-    width: 60px;
 }
 
 .research-card p {
     color: var(--text-light);
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-top: auto;
+    margin-bottom: 2rem;
+    transition: color 0.3s ease;
 }
 
 .research-card:hover p {
     color: var(--text-dark);
+}
+
+.research-link.subtle {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    opacity: 0.4;
+}
+
+.research-card:hover .research-link.subtle {
+    opacity: 0.8;
+    color: var(--primary-blue);
+    transform: translateX(2px);
+}
+
+.research-link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid var(--primary-blue);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.research-link:hover {
+    background-color: var(--primary-blue);
+    color: white;
+    transform: translateX(3px);
+}
+
+.research-link i {
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.research-link:hover i {
+    transform: translateX(2px);
 }
 
 /* Research Section Header */
@@ -664,6 +682,168 @@ footer::before {
     animation: gradientShift 10s ease infinite;
 }
 
+/* Leadership Section */
+.leadership {
+    padding: 4rem 2rem;
+    background-color: #f8f9fa;
+}
+
+.leadership h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+}
+
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.leadership-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.leadership-card:hover {
+    transform: translateY(-5px);
+}
+
+.leadership-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.leadership-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.leadership-content {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.leadership-content h3 {
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+.leadership-role {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.leadership-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.leadership-links a {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.leadership-links a:hover {
+    color: #3498db;
+}
+
+/* Research detail page styles */
+.research-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8rem 2rem 2rem 2rem;
+}
+
+.research-detail h1 {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.research-content {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.research-overview {
+    margin-bottom: 4rem;
+}
+
+.research-publications {
+    margin-bottom: 4rem;
+}
+
+.research-impact {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(52, 152, 219, 0.2);
+}
+
+.research-impact h2 {
+    margin-bottom: 1.5rem;
+}
+
+.research-impact > p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+.research-impact ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.research-impact li {
+    margin-bottom: 0;
+    padding: 1.2rem 1.5rem 1.2rem 2.5rem;
+    position: relative;
+    background: #f8f9fa;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(52, 152, 219, 0.1);
+    line-height: 1.5;
+    font-size: 1.05rem;
+}
+
+.research-impact li:hover {
+    transform: translateX(5px);
+    background: #fff;
+    border-color: rgba(52, 152, 219, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.research-impact li:before {
+    content: "→";
+    color: var(--primary-blue);
+    position: absolute;
+    left: 1rem;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+
+.research-impact li:hover:before {
+    transform: translateX(3px);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar {
@@ -739,5 +919,10 @@ footer::before {
 
     .research-card h3 {
         font-size: 1.3rem;
+    }
+
+    .leadership-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
     }
 } 
