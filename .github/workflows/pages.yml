@@ -1,0 +1,18 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [ main ]  # Adjust to your deployment branch if different
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      # Add your build steps here if needed
+      - uses: actions/configure-pages@v4
+      - uses: actions/deploy-pages@v4
