@@ -59,40 +59,55 @@ const teamData = {
     }
 };
 
-// Function to create team member cards
-function createTeamCards() {
-    const teamGrid = document.querySelector('.team-grid');
-    if (!teamGrid) return;
-
-    teamGrid.innerHTML = Object.entries(teamData).map(([id, member]) => `
-        <div class="team-card-wrapper">
-            <div class="team-card">
-                <div class="team-card-front">
-                    <div class="team-card-image">
-                        <img src="${member.image}" alt="${member.name}">
-                    </div>
-                    <div class="team-card-front-content">
-                        <h3>${member.name}</h3>
-                        <p class="team-role">${member.role}</p>
-                        <p class="team-bio team-bio-short">${member.short_bio}</p>
-                    </div>
+// Function to create team cards
+function createTeamCard(member) {
+    const card = document.createElement('div');
+    card.className = 'team-card-wrapper';
+    
+    card.innerHTML = `
+        <div class="team-card">
+            <div class="team-card-front">
+                <div class="team-card-image">
+                    <img src="${member.image}" alt="${member.name}">
                 </div>
-                <div class="team-card-back">
-                    <div class="team-links">
-                        ${member.links.map(link => `
-                            <a href="${link.url}" target="_blank" rel="noopener noreferrer" title="${link.title}">
-                                <i class="${link.icon}"></i>
-                            </a>
-                        `).join('')}
-                    </div>
+                <div class="team-card-front-content">
                     <h3>${member.name}</h3>
                     <p class="team-role">${member.role}</p>
-                    <p class="team-bio team-bio-full">${member.full_bio}</p>
+                    <p class="team-bio-short">${member.short_bio}</p>
+                </div>
+            </div>
+            <div class="team-card-back">
+                <h3>${member.name}</h3>
+                <p class="team-role">${member.role}</p>
+                <p class="team-bio-full">${member.full_bio}</p>
+                <div class="team-links">
+                    ${member.links.map(link => `
+                        <a href="${link.url}" target="_blank" rel="noopener noreferrer" title="${link.title}">
+                            <i class="${link.icon}"></i>
+                        </a>
+                    `).join('')}
                 </div>
             </div>
         </div>
-    `).join('');
+    `;
+    
+    return card;
 }
 
-// Initialize team cards when the page loads
-document.addEventListener('DOMContentLoaded', createTeamCards); 
+// Function to load team members
+function loadTeamMembers() {
+    const teamGrid = document.querySelector('.team-grid');
+    if (!teamGrid) return;
+
+    // Clear existing content
+    teamGrid.innerHTML = '';
+
+    // Add team members
+    Object.values(teamData).forEach(member => {
+        const card = createTeamCard(member);
+        teamGrid.appendChild(card);
+    });
+}
+
+// Load team members when the page loads
+document.addEventListener('DOMContentLoaded', loadTeamMembers); 

@@ -68,6 +68,17 @@ body {
     color: var(--text-light);
 }
 
+.logo a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.logo a:hover {
+    opacity: 0.8;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -275,16 +286,19 @@ section:hover h2::after {
 .research-card {
     background: var(--white);
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: var(--shadow-sm);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    border: 1px solid transparent;
 }
 
 .research-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-md);
+    border-color: var(--primary-blue);
+    background-color: rgba(41, 128, 185, 0.02);
 }
 
 .research-card h3 {
