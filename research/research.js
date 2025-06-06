@@ -1,7 +1,33 @@
 // Research data
 const researchData = {
+  "world_domination": {
+    "title": "World Domination Through AI",
+    "icon": "fas fa-globe-americas",
+    "grid_description": "Our secret mission to take over the world, one AI algorithm at a time. (Just kidding... or are we?)",
+    "short_description": "Our secret mission to take over the world, one AI algorithm at a time. (Just kidding... or are we?)",
+    "overview": "In our most ambitious research project yet, we're exploring the theoretical foundations of AI-driven global governance. Through advanced machine learning algorithms and strategic deployment of medical imaging AI, we aim to establish a benevolent dictatorship of algorithms. Our preliminary results suggest that world domination through AI is not only possible but potentially beneficial for healthcare outcomes. (Disclaimer: This is a joke, but our AI models are getting suspiciously good at predicting our next moves...)",
+    "publications": [
+      {
+        "title": "The Role of Medical Imaging AI in Global Governance: A Theoretical Framework",
+        "link": "#",
+        "journal": "Journal of Hypothetical Research, 2025",
+        "description": "A tongue-in-cheek exploration of how medical imaging AI could theoretically be used to establish global dominance. Features advanced algorithms for predicting world leaders' next moves and optimizing healthcare delivery on a planetary scale."
+      }
+    ],
+    "impact": [
+      "Increased efficiency in global healthcare delivery (when we take over)",
+      "Reduced paperwork through AI-driven bureaucracy",
+      "Universal healthcare coverage (mandatory)",
+      "World peace through superior algorithm-based decision making",
+      "Elimination of traffic jams through AI-controlled transportation systems",
+      "Perfect weather forecasting (because we'll control the weather)"
+    ]
+  },
   "surgical_complexity": {
     "title": "Quantifying Surgical Complexity",
+    "icon": "fas fa-chart-line",
+    "grid_description": "Using AI to automate RENAL and PADUA nephrometry scoring for better surgical planning and outcome prediction.",
+    "short_description": "Using AI to automate RENAL and PADUA nephrometry scoring for better surgical planning and outcome prediction.",
     "overview": "Our research in surgical complexity focuses on developing and validating AI systems for automated nephrometry scoring and surgical risk assessment. We have developed multiple AI-based scoring systems, including R.E.N.A.L., R.E.N.A.L.+, PADUA, C-Index, and tumor CSA, that demonstrate superior or equivalent predictive utility compared to human-generated scores. Additionally, we have pioneered the concept of \"AI Age Discrepancy\" as a novel metric for frailty assessment in kidney tumor patients. Our work spans from basic algorithm development to clinical validation and implementation, with a focus on improving surgical planning, risk stratification, and patient outcomes through automated, objective assessment tools.",
     "publications": [
       {
@@ -40,6 +66,9 @@ const researchData = {
   },
     "cancer_progression": {
         "title": "Predicting Cancer Progression and Recurrence",
+        "icon": "fas fa-dna",
+        "grid_description": "Using machine learning to predict cancer progression by combining imaging data with clinical parameters.",
+        "short_description": "Using machine learning to predict cancer progression by combining imaging data with clinical parameters.",
         "overview": "Our research in cancer progression leverages advanced AI methodologies to predict tumor evolution, recurrence, and patient outcomes. By integrating clinical data, imaging, and molecular profiles, we aim to enhance prognostic accuracy and inform personalized treatment strategies.",
         "publications": [
         {
@@ -65,6 +94,9 @@ const researchData = {
     },
   "kidney_preservation": {
     "title": "Preserving Kidney Function After Cancer Treatment",
+    "icon": "fas fa-kidneys",
+    "grid_description": "Developing AI tools to optimize kidney function preservation through personalized treatment approaches.",
+    "short_description": "Developing AI tools to optimize kidney function preservation through personalized treatment approaches.",
     "overview": "Our research focuses on strategies to preserve renal function in patients undergoing treatment for kidney cancer. By evaluating surgical techniques, postoperative outcomes, and patient-specific factors, we aim to optimize treatment plans that maintain kidney health without compromising oncologic efficacy.",
     "publications": [
       {
@@ -96,6 +128,9 @@ const researchData = {
   },
   "ai_implementation": {
     "title": "Studying the Implementation of AI in Medicine",
+    "icon": "fas fa-robot",
+    "grid_description": "Studying practical implementation of AI in clinical settings, focusing on workflow integration and validation.",
+    "short_description": "Studying practical implementation of AI in clinical settings, focusing on workflow integration and validation.",
     "overview": "Our research focuses on the practical integration of artificial intelligence (AI) into clinical workflows, emphasizing its application in urology and surgical practices. We examine the challenges and opportunities associated with deploying AI tools in real-world medical settings, aiming to enhance decision-making, improve patient outcomes, and streamline healthcare processes.",
     "publications": [
       {
@@ -152,6 +187,9 @@ const researchData = {
   },
   "pediatric_care": {
     "title": "Preserving Kidney Function in Kids with Genetic Diseases",
+    "icon": "fas fa-child",
+    "grid_description": "Developing AI tools for improving kidney function preservation in children with genetic diseases.",
+    "short_description": "Developing AI tools for improving kidney function preservation in children with genetic diseases.",
     "overview": "Our research focuses on preserving renal function in pediatric patients with genetic kidney diseases. By integrating advanced imaging techniques, machine learning models, and genetic testing, we aim to enhance early diagnosis, predict disease progression, and tailor individualized treatment strategies to improve long-term outcomes for children.",
     "publications": [
       {
@@ -189,6 +227,9 @@ const researchData = {
   },
   "urinary_disorders": {
     "title": "Improving Treatments for Urinary Disorders",
+    "icon": "fas fa-procedures",
+    "grid_description": "Creating AI solutions to enhance diagnosis and treatment selection for urological conditions.",
+    "short_description": "Creating AI solutions to enhance diagnosis and treatment selection for urological conditions.",
     "overview": "Our research focuses on leveraging artificial intelligence and machine learning to enhance the diagnosis, treatment, and management of urinary disorders. By integrating advanced computational models with clinical data, we aim to improve patient outcomes, personalize therapies, and streamline clinical workflows in urology.",
     "publications": [
       {
@@ -232,6 +273,9 @@ const researchData = {
   },
   "antibiotic_resistance": {
     "title": "Predicting Antibiotic Resistance",
+    "icon": "fas fa-bacteria",
+    "grid_description": "Using machine learning to predict antibiotic resistance patterns and optimize treatment strategies.",
+    "short_description": "Using machine learning to predict antibiotic resistance patterns and optimize treatment strategies.",
     "overview": "Our research focuses on leveraging artificial intelligence and machine learning to predict antibiotic resistance patterns, particularly in urinary tract infections (UTIs). By integrating clinical data, patient history, and advanced computational models, we aim to enhance antibiotic stewardship, reduce the misuse of antibiotics, and improve patient outcomes.",
     "publications": [
       {
@@ -307,4 +351,30 @@ function loadResearchData() {
 }
 
 // Load the data when the page loads
-document.addEventListener('DOMContentLoaded', loadResearchData); 
+document.addEventListener('DOMContentLoaded', loadResearchData);
+
+// Function to generate research grid HTML
+function generateResearchGrid() {
+    const gridContainer = document.querySelector('.research-grid');
+    if (!gridContainer) return;
+
+    gridContainer.innerHTML = ''; // Clear existing content
+
+    Object.entries(researchData).forEach(([id, data]) => {
+        const card = document.createElement('div');
+        card.className = 'research-card';
+        
+        card.innerHTML = `
+            <h3><a href="research/template.html?id=${id}"><i class="${data.icon}"></i> ${data.title}</a></h3>
+            <p>${data.grid_description}</p>
+            <a href="research/template.html?id=${id}" class="research-link subtle">→</a>
+        `;
+        
+        gridContainer.appendChild(card);
+    });
+}
+
+// Call the function when the DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    generateResearchGrid();
+}); 

@@ -721,11 +721,12 @@ footer::before {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .leadership-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .leadership-image {
@@ -738,11 +739,15 @@ footer::before {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.leadership-card:hover .leadership-image img {
+    transform: scale(1.05);
 }
 
 .leadership-content {
     padding: 1.5rem;
-    text-align: center;
 }
 
 .leadership-content h3 {
@@ -753,25 +758,30 @@ footer::before {
 
 .leadership-role {
     color: #666;
-    margin-bottom: 1rem;
     font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.leadership-description {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
 }
 
 .leadership-links {
     display: flex;
-    justify-content: center;
     gap: 1rem;
-    margin-top: 1rem;
 }
 
 .leadership-links a {
-    color: #2c3e50;
+    color: #666;
     font-size: 1.2rem;
     transition: color 0.3s ease;
 }
 
 .leadership-links a:hover {
-    color: #3498db;
+    color: #007bff;
 }
 
 /* Research detail page styles */
@@ -938,5 +948,9 @@ footer::before {
     .leadership-grid {
         grid-template-columns: 1fr;
         max-width: 400px;
+    }
+    
+    .leadership-image {
+        height: 250px;
     }
 } 
