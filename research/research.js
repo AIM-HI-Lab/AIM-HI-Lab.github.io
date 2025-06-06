@@ -360,17 +360,33 @@ function generateResearchGrid() {
 
     gridContainer.innerHTML = ''; // Clear existing content
 
-    Object.entries(researchData).forEach(([id, data]) => {
-        const card = document.createElement('div');
-        card.className = 'research-card';
-        
-        card.innerHTML = `
-            <h3><a href="research/template.html?id=${id}"><i class="${data.icon}"></i> ${data.title}</a></h3>
-            <p>${data.grid_description}</p>
-            <a href="research/template.html?id=${id}" class="research-link subtle">→</a>
-        `;
-        
-        gridContainer.appendChild(card);
+    // Define the order of research items
+    const researchOrder = [
+        'surgical_complexity',
+        'cancer_progression',
+        'kidney_preservation',
+        'ai_implementation',
+        'pediatric_care',
+        'urinary_disorders',
+        'antibiotic_resistance',
+        'world_domination'  // Add world domination as the last item
+    ];
+
+    // Create cards in the specified order
+    researchOrder.forEach(id => {
+        if (researchData[id]) {  // Check if the research item exists
+            const data = researchData[id];
+            const card = document.createElement('div');
+            card.className = 'research-card';
+            
+            card.innerHTML = `
+                <h3><a href="research/template.html?id=${id}"><i class="${data.icon}"></i> ${data.title}</a></h3>
+                <p>${data.grid_description}</p>
+                <a href="research/template.html?id=${id}" class="research-link subtle">→</a>
+            `;
+            
+            gridContainer.appendChild(card);
+        }
     });
 }
 
