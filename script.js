@@ -8,9 +8,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 behavior: 'smooth',
                 block: 'start'
             });
+            // Update URL without triggering scroll
+            history.pushState(null, null, this.getAttribute('href'));
         }
     });
 });
+
+// Prevent automatic scrolling on page load with hash
+if (window.location.hash) {
+    // Remove the hash from the URL without scrolling
+    history.replaceState(null, null, window.location.pathname);
+}
 
 // Navbar scroll effect
 const navbar = document.querySelector('.navbar');

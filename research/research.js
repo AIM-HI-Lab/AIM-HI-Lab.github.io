@@ -312,7 +312,6 @@ function loadResearchData() {
         console.log('Fetching research data...');
         if (!researchId || !researchData[researchId]) {
             console.log('Invalid research ID or data not found:', researchId);
-            window.location.href = '../index.html#research';
             return;
         }
 
