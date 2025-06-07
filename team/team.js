@@ -21,7 +21,7 @@ const teamData = {
     },
     "nicholas_heller": {
         "name": "Nicholas Heller, PhD",
-        "role": "Research Associate",
+        "role": "Computing Director",
         "image": "https://github.com/neheller.png",
         "short_bio": "Research associate at Cleveland Clinic department of Urology, specializing in medical image analysis and machine learning.",
         "full_bio": "Research associate at Cleveland Clinic department of urology, specializing in medical image analysis and machine learning. Contributing to the Kidney Tumor Segmentation Challenge (KiTS) and developing innovative AI solutions for medical imaging. His research focuses on improving the accuracy and efficiency of medical image analysis through advanced machine learning techniques.",

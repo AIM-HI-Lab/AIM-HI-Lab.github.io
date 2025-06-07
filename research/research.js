@@ -1,28 +1,5 @@
 // Research data
 const researchData = {
-  "world_domination": {
-    "title": "World Domination Through AI",
-    "icon": "fas fa-globe-americas",
-    "grid_description": "Our secret mission to take over the world, one AI algorithm at a time. (Just kidding... or are we?)",
-    "short_description": "Our secret mission to take over the world, one AI algorithm at a time. (Just kidding... or are we?)",
-    "overview": "In our most ambitious research project yet, we're exploring the theoretical foundations of AI-driven global governance. Through advanced machine learning algorithms and strategic deployment of medical imaging AI, we aim to establish a benevolent dictatorship of algorithms. Our preliminary results suggest that world domination through AI is not only possible but potentially beneficial for healthcare outcomes. (Disclaimer: This is a joke, but our AI models are getting suspiciously good at predicting our next moves...)",
-    "publications": [
-      {
-        "title": "The Role of Medical Imaging AI in Global Governance: A Theoretical Framework",
-        "link": "#",
-        "journal": "Journal of Hypothetical Research, 2025",
-        "description": "A tongue-in-cheek exploration of how medical imaging AI could theoretically be used to establish global dominance. Features advanced algorithms for predicting world leaders' next moves and optimizing healthcare delivery on a planetary scale."
-      }
-    ],
-    "impact": [
-      "Increased efficiency in global healthcare delivery (when we take over)",
-      "Reduced paperwork through AI-driven bureaucracy",
-      "Universal healthcare coverage (mandatory)",
-      "World peace through superior algorithm-based decision making",
-      "Elimination of traffic jams through AI-controlled transportation systems",
-      "Perfect weather forecasting (because we'll control the weather)"
-    ]
-  },
   "surgical_complexity": {
     "title": "Quantifying Surgical Complexity",
     "icon": "fas fa-chart-line",
@@ -298,6 +275,29 @@ const researchData = {
       "Integration of historical patient data to personalize antibiotic treatment plans.",
       "Contribution to clinical guidelines promoting diagnostic and antibiotic stewardship in urinary tract infections."
     ]
+  },
+  "world_domination": {
+    "title": "World Domination Through AI",
+    "icon": "fas fa-globe-americas",
+    "grid_description": "Our secret mission to take over the world, one AI algorithm at a time. (Just kidding... or are we?)",
+    "short_description": "Our secret mission to take over the world, one AI algorithm at a time. (Just kidding... or are we?)",
+    "overview": "In our most ambitious research project yet, we're exploring the theoretical foundations of AI-driven global governance. Through advanced machine learning algorithms and strategic deployment of medical imaging AI, we aim to establish a benevolent dictatorship of algorithms. Our preliminary results suggest that world domination through AI is not only possible but potentially beneficial for healthcare outcomes. (Disclaimer: This is a joke, but our AI models are getting suspiciously good at predicting our next moves...)",
+    "publications": [
+      {
+        "title": "The Role of Medical Imaging AI in Global Governance: A Theoretical Framework",
+        "link": "#",
+        "journal": "Journal of Hypothetical Research, 2025",
+        "description": "A tongue-in-cheek exploration of how medical imaging AI could theoretically be used to establish global dominance. Features advanced algorithms for predicting world leaders' next moves and optimizing healthcare delivery on a planetary scale."
+      }
+    ],
+    "impact": [
+      "Increased efficiency in global healthcare delivery (when we take over)",
+      "Reduced paperwork through AI-driven bureaucracy",
+      "Universal healthcare coverage (mandatory)",
+      "World peace through superior algorithm-based decision making",
+      "Elimination of traffic jams through AI-controlled transportation systems",
+      "Perfect weather forecasting (because we'll control the weather)"
+    ]
   }
 };
 
@@ -360,33 +360,18 @@ function generateResearchGrid() {
 
     gridContainer.innerHTML = ''; // Clear existing content
 
-    // Define the order of research items
-    const researchOrder = [
-        'surgical_complexity',
-        'cancer_progression',
-        'kidney_preservation',
-        'ai_implementation',
-        'pediatric_care',
-        'urinary_disorders',
-        'antibiotic_resistance',
-        'world_domination'  // Add world domination as the last item
-    ];
-
-    // Create cards in the specified order
-    researchOrder.forEach(id => {
-        if (researchData[id]) {  // Check if the research item exists
-            const data = researchData[id];
-            const card = document.createElement('div');
-            card.className = 'research-card';
-            
-            card.innerHTML = `
-                <h3><a href="research/template.html?id=${id}"><i class="${data.icon}"></i> ${data.title}</a></h3>
-                <p>${data.grid_description}</p>
-                <a href="research/template.html?id=${id}" class="research-link subtle">→</a>
-            `;
-            
-            gridContainer.appendChild(card);
-        }
+    // Create cards by looping through researchData
+    Object.entries(researchData).forEach(([id, data]) => {
+        const card = document.createElement('div');
+        card.className = 'research-card';
+        
+        card.innerHTML = `
+            <h3><a href="research/template.html?id=${id}"><i class="${data.icon}"></i> ${data.title}</a></h3>
+            <p>${data.grid_description}</p>
+            <a href="research/template.html?id=${id}" class="research-link subtle">→</a>
+        `;
+        
+        gridContainer.appendChild(card);
     });
 }
 
