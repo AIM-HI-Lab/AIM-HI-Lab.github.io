@@ -276,27 +276,20 @@ const researchData = {
       "Contribution to clinical guidelines promoting diagnostic and antibiotic stewardship in urinary tract infections."
     ]
   },
-  "world_domination": {
-    "title": "World Domination Through AI",
-    "icon": "fas fa-globe-americas",
-    "grid_description": "Our secret mission to take over the world, one AI algorithm at a time. (Just kidding... or are we?)",
-    "short_description": "Our secret mission to take over the world, one AI algorithm at a time. (Just kidding... or are we?)",
-    "overview": "In our most ambitious research project yet, we're exploring the theoretical foundations of AI-driven global governance. Through advanced machine learning algorithms and strategic deployment of medical imaging AI, we aim to establish a benevolent dictatorship of algorithms. Our preliminary results suggest that world domination through AI is not only possible but potentially beneficial for healthcare outcomes. (Disclaimer: This is a joke, but our AI models are getting suspiciously good at predicting our next moves...)",
-    "publications": [
-      {
-        "title": "The Role of Medical Imaging AI in Global Governance: A Theoretical Framework",
-        "link": "#",
-        "journal": "Journal of Hypothetical Research, 2025",
-        "description": "A tongue-in-cheek exploration of how medical imaging AI could theoretically be used to establish global dominance. Features advanced algorithms for predicting world leaders' next moves and optimizing healthcare delivery on a planetary scale."
-      }
-    ],
+  // Section for our Research in Automating Robotic Surgery, which we don't have publications for yet
+  "robotic_surgery": {
+    "title": "Automating Robotic Surgery",
+    "icon": "fas fa-robot",
+    "grid_description": "Developing AI tools to automate robotic surgery.",
+    "short_description": "Developing AI tools to automate robotic surgery.",
+    "overview": "Our research focuses on developing AI tools to automate robotic surgery. By integrating advanced machine learning algorithms with robotic surgical systems, we aim to enhance surgical precision, reduce surgical errors, and improve patient outcomes.",
+    "publications": [],
     "impact": [
-      "Increased efficiency in global healthcare delivery (when we take over)",
-      "Reduced paperwork through AI-driven bureaucracy",
-      "Universal healthcare coverage (mandatory)",
-      "World peace through superior algorithm-based decision making",
-      "Elimination of traffic jams through AI-controlled transportation systems",
-      "Perfect weather forecasting (because we'll control the weather)"
+      "Development of AI tools to automate robotic surgery.",
+      "Enhanced surgical precision and efficiency through AI-assisted robotic systems.",
+      "Reduction of surgical errors and complications through AI-driven decision support.",
+      "Improved patient outcomes through AI-assisted robotic surgery.",
+      "Contribution to the standardization of robotic surgery protocols and practices in medicine."
     ]
   }
 };
