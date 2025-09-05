@@ -192,14 +192,28 @@ body {
     }
 }
 
-.hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+.hero-title-group {
+    margin-bottom: 2rem;
 }
 
-.hero-content p {
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
     font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0;
+    color: #f0f0f0;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.hero-description {
+    font-size: 1.2rem;
     max-width: 800px;
     margin: 0 auto;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
@@ -290,6 +304,99 @@ section h2::after {
 
 section:hover h2::after {
     width: 100px;
+}
+
+/* About Section */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-intro {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.research-focus {
+    margin: 3rem 0;
+}
+
+.research-focus h3 {
+    font-size: 2rem;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.focus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.focus-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.focus-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.focus-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.focus-card h4 {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.focus-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.about-conclusion {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-top: 3rem;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.about-conclusion a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.about-conclusion a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
 }
 
 /* Research Grid */
