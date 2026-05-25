@@ -3,10 +3,16 @@ const researchData = {
   "surgical_complexity": {
     "title": "Quantifying Surgical Complexity",
     "icon": "fas fa-chart-line",
-    "grid_description": "Using AI to automate RENAL and PADUA nephrometry scoring for better surgical planning and outcome prediction.",
-    "short_description": "Using AI to automate RENAL and PADUA nephrometry scoring for better surgical planning and outcome prediction.",
-    "overview": "Our research in surgical complexity focuses on developing and validating AI systems for automated nephrometry scoring and surgical risk assessment. We have developed multiple AI-based scoring systems, including R.E.N.A.L., R.E.N.A.L.+, PADUA, C-Index, and tumor CSA, that demonstrate superior or equivalent predictive utility compared to human-generated scores. Additionally, we have pioneered the concept of \"AI Age Discrepancy\" as a novel metric for frailty assessment in kidney tumor patients. Our work spans from basic algorithm development to clinical validation and implementation, with a focus on improving surgical planning, risk stratification, and patient outcomes through automated, objective assessment tools.",
+    "grid_description": "Developing automated complexity markers—including the CLARITY score and nephrometry systems—for surgical planning and outcome prediction.",
+    "short_description": "Developing automated complexity markers—including the CLARITY score and nephrometry systems—for surgical planning and outcome prediction.",
+    "overview": "Our research in surgical complexity focuses on developing and validating AI systems for automated nephrometry scoring and surgical risk assessment. We have developed multiple AI-based scoring systems, including R.E.N.A.L., R.E.N.A.L.+, PADUA, C-Index, and tumor CSA, that demonstrate superior or equivalent predictive utility compared to human-generated scores. We also introduced the CLARITY score (CLeveland Automated Renal tumor complexITY), a fully automated CT-derived marker trained to predict partial versus radical nephrectomy and repurposed as an objective measure of nephron-sparing complexity. Additionally, we have pioneered the concept of \"AI Age Discrepancy\" as a novel metric for frailty assessment in kidney tumor patients. Our work spans from basic algorithm development to clinical validation and implementation, with a focus on improving surgical planning, risk stratification, and patient outcomes through automated, objective assessment tools.",
     "publications": [
+      {
+        "title": "An Automated CT-Derived Marker of Renal Tumor Complexity: The CLARITY Score",
+        "link": "https://www.medrxiv.org/content/10.64898/2026.05.08.26352647v2",
+        "journal": "medRxiv preprint, 2026",
+        "description": "This study introduces the CLARITY score, a fully automated CT-derived marker of renal tumor complexity derived from a deep learning model's confidence that a patient will undergo radical rather than partial nephrectomy. In internal and external validation, CLARITY outperformed tumor size and R.E.N.A.L. score for predicting partial nephrectomy versus radical nephrectomy and, among partial nephrectomy patients, for failure to achieve trifecta, estimated blood loss ≥ 500 mL, and length of stay ≥ 3 days. A public inference pipeline and web-based DICOM upload portal are available for research use."
+      },
       {
         "title": "AI Age Discrepancy: A Novel Parameter for Frailty Assessment in Kidney Tumor Patients",
         "link": "https://link.springer.com/chapter/10.1007/978-3-031-73376-5_16",
@@ -33,6 +39,7 @@ const researchData = {
       }
     ],
     "impact": [
+      "CLARITY score: automated CT-derived marker of partial nephrectomy complexity with external validation and public inference tools",
       "Automated nephrometry scoring systems that match or exceed human expert performance in predicting oncologic and perioperative outcomes",
       "Novel AI Age Discrepancy metric for frailty assessment, correlating with hospital stay duration and survival rates",
       "Time-efficient point-of-care tools for surgical planning and risk stratification",
